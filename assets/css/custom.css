@@ -29,6 +29,12 @@
   line-height: 1.5;
 }
 
+.pub-note {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .publication.text-only {
   border-top: 1px solid var(--border-color);
 }
