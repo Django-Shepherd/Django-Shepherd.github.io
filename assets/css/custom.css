@@ -31,6 +31,7 @@
   align-items: flex-start;
   --dst-visual-height: 11.5rem;
   --dst-visual-gap: .35rem;
+  --dst-visual-row-gap: .15rem;
 }
 
 .dst-feature .pub-image {
@@ -41,7 +42,7 @@
   background: #fff;
   border: 1px solid var(--border-color);
   display: grid;
-  gap: var(--dst-visual-gap);
+  row-gap: var(--dst-visual-row-gap);
   grid-template-rows: 1fr .8fr;
   height: var(--dst-visual-height);
   overflow: hidden;
@@ -70,6 +71,17 @@
   gap: var(--dst-visual-gap);
   margin-top: 0;
   min-height: 0;
+  padding-top: calc(var(--dst-visual-row-gap) + .2rem);
+  position: relative;
+}
+
+.dst-figure-stack::before {
+  border-top: 1px dashed #9f9f9f;
+  content: "";
+  left: 12%;
+  position: absolute;
+  right: 12%;
+  top: 0;
 }
 
 .dst-figure-stack img {
