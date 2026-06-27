@@ -29,7 +29,7 @@
 
 .dst-feature {
   align-items: flex-start;
-  --dst-visual-height: 12.5rem;
+  --dst-visual-height: 11.5rem;
   --dst-visual-gap: .35rem;
 }
 
@@ -42,7 +42,7 @@
   border: 1px solid var(--border-color);
   display: grid;
   gap: var(--dst-visual-gap);
-  grid-template-rows: 1fr .85fr;
+  grid-template-rows: 1fr .8fr;
   height: var(--dst-visual-height);
   overflow: hidden;
   padding: var(--dst-visual-gap);
@@ -66,7 +66,7 @@
 
 .dst-figure-stack {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--dst-visual-gap);
   margin-top: 0;
   min-height: 0;
@@ -76,6 +76,7 @@
   display: block;
   aspect-ratio: auto;
   min-height: 0;
+  object-fit: cover;
 }
 
 .pub-summary {
