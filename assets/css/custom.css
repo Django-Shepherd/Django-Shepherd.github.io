@@ -2,6 +2,10 @@
   object-fit: cover;
 }
 
+.sidebar-about > a.sidebar-title::after {
+  display: none;
+}
+
 .content .avatar {
   object-fit: cover;
 }
@@ -21,6 +25,30 @@
   background: #fff;
   border: 1px solid var(--border-color);
   object-fit: contain;
+}
+
+.dst-feature {
+  align-items: flex-start;
+}
+
+.dst-feature .pub-image {
+  flex: 3;
+}
+
+.dst-feature .pub-info {
+  flex: 6;
+}
+
+.dst-figure-stack {
+  display: grid;
+  gap: .5rem;
+  margin-top: .5rem;
+}
+
+.dst-figure-stack img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
 }
 
 .pub-summary {
