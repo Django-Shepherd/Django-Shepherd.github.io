@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal homepage of Django-Shepherd.">
+    <title>Django-Shepherd</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">Django-Shepherd</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <img src="assets/hero.jpg" alt="Street steps seen from above" class="hero-image">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Robotics · Planning · Learning</p>
+          <h1>Yiqing Yuan</h1>
+          <p class="hero-copy">
+            I build and study intelligent systems for embodied decision-making,
+            robot learning, and long-horizon planning.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View work</a>
+            <a class="button secondary" href="https://github.com/Django-Shepherd">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section intro-section">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2>Research-minded engineering, from ideas to working systems.</h2>
+        </div>
+        <p>
+          I am interested in robotics, embodied AI, generative models, and
+          decision-making under uncertainty. This page is a compact home for my
+          projects, papers, notes, and contact information.
+        </p>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Focus</p>
+          <h2>Current Directions</h2>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-item">
+            <span>01</span>
+            <h3>Robot Skill Learning</h3>
+            <p>Learning reusable behaviors for manipulation and household tasks.</p>
+          </article>
+          <article class="focus-item">
+            <span>02</span>
+            <h3>Diffusion and Planning</h3>
+            <p>Using generative models to represent trajectories, actions, and goals.</p>
+          </article>
+          <article class="focus-item">
+            <span>03</span>
+            <h3>Embodied Evaluation</h3>
+            <p>Building benchmarks and experiments that connect algorithms to environments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects-section">
+        <div class="section-heading">
+          <p class="section-kicker">Projects</p>
+          <h2>Selected Work</h2>
+        </div>
+        <div class="project-list">
+          <article class="project-row">
+            <div>
+              <h3>DST-Planner</h3>
+              <p>Planning and decision-making experiments for embodied agents.</p>
+            </div>
+            <a href="https://github.com/Django-Shepherd" aria-label="Open GitHub profile">GitHub</a>
+          </article>
+          <article class="project-row">
+            <div>
+              <h3>M2Diffuser</h3>
+              <p>Diffusion-model research code for robotics and trajectory generation.</p>
+            </div>
+            <a href="https://github.com/Django-Shepherd" aria-label="Open GitHub profile">GitHub</a>
+          </article>
+          <article class="project-row">
+            <div>
+              <h3>ManiSkill / MSHAB Experiments</h3>
+              <p>Simulation, imitation learning, and reinforcement learning workflows.</p>
+            </div>
+            <a href="https://github.com/Django-Shepherd" aria-label="Open GitHub profile">GitHub</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>Let us build something precise and useful.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/Django-Shepherd">GitHub</a>
+          <a href="mailto:your.email@example.com">Email</a>
+          <a href="#">Google Scholar</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year">2026</span> Yiqing Yuan. Built with GitHub Pages.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
