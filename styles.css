@@ -240,10 +240,74 @@ h3 {
 }
 
 .projects-section .section-heading,
+.paper-list,
 .project-list {
   width: min(1120px, 100%);
   margin-right: auto;
   margin-left: auto;
+}
+
+.featured-list {
+  display: grid;
+  gap: 28px;
+}
+
+.paper-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(420px, 1.22fr);
+  gap: 28px;
+  align-items: center;
+  padding: 30px;
+  background: rgb(255 255 255 / 0.62);
+  border: 1px solid #cfc6b8;
+  border-radius: 8px;
+}
+
+.paper-copy p {
+  color: var(--muted);
+}
+
+.paper-meta {
+  margin-bottom: 9px;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.authors {
+  margin-bottom: 18px;
+  color: #4f5961;
+  font-size: 0.95rem;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--accent-strong);
+  font-weight: 800;
+  border-bottom: 2px solid var(--accent);
+}
+
+.pipeline-figure {
+  margin: 0;
+}
+
+.pipeline-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3.35 / 1;
+  object-fit: contain;
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid #d8d0c3;
+}
+
+.pipeline-figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.86rem;
 }
 
 .project-list {
@@ -264,19 +328,31 @@ h3 {
   font-weight: 800;
 }
 
+.project-row h3 {
+  max-width: 860px;
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.contact-links a {
+.contact-links a,
+.contact-links span {
   display: inline-flex;
   min-height: 42px;
   align-items: center;
-  border-bottom: 2px solid var(--accent);
   color: var(--ink);
   font-weight: 750;
+}
+
+.contact-links a {
+  border-bottom: 2px solid var(--accent);
+}
+
+.contact-links span {
+  color: var(--muted);
 }
 
 .footer {
@@ -315,6 +391,7 @@ h3 {
   .intro-section,
   .contact-section,
   .focus-grid,
+  .paper-card,
   .project-row {
     grid-template-columns: 1fr;
   }
@@ -330,5 +407,13 @@ h3 {
 
   .project-row {
     gap: 12px;
+  }
+
+  .paper-card {
+    padding: 20px;
+  }
+
+  .pipeline-figure img {
+    aspect-ratio: 2.2 / 1;
   }
 }

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal homepage of Django-Shepherd.">
-    <title>Django-Shepherd</title>
+    <meta name="description" content="Yiqing Yuan's personal homepage for robotics, reinforcement learning, and embodied AI research.">
+    <title>Yiqing Yuan</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -12,8 +12,8 @@
       <a class="brand" href="#top">Django-Shepherd</a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
+        <a href="#first-author">First-author</a>
+        <a href="#other-work">Other work</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -26,12 +26,13 @@
           <p class="eyebrow">Robotics · Planning · Learning</p>
           <h1>Yiqing Yuan</h1>
           <p class="hero-copy">
-            I build and study intelligent systems for embodied decision-making,
-            robot learning, and long-horizon planning.
+            I work on robotic exploration, topological planning, reinforcement
+            learning, and active scene reconstruction.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#work">View work</a>
+            <a class="button primary" href="#first-author">View work</a>
             <a class="button secondary" href="https://github.com/Django-Shepherd">GitHub</a>
+            <a class="button secondary" href="https://scholar.google.com/citations?user=7MIXN0QAAAAJ&hl=en">Scholar</a>
           </div>
         </div>
       </section>
@@ -39,65 +40,106 @@
       <section id="about" class="section intro-section">
         <div>
           <p class="section-kicker">About</p>
-          <h2>Research-minded engineering, from ideas to working systems.</h2>
+          <h2>Robotic decision-making for exploration and reconstruction.</h2>
         </div>
         <p>
-          I am interested in robotics, embodied AI, generative models, and
-          decision-making under uncertainty. This page is a compact home for my
-          projects, papers, notes, and contact information.
+          I am affiliated with Sun Yat-sen University and focus on reinforcement
+          learning, topological representations, and embodied planning. My work
+          studies how robots can reason over compact graph structures, select
+          informative viewpoints, and transfer learned policies to complex
+          real-world environments.
         </p>
       </section>
 
       <section id="work" class="section">
         <div class="section-heading">
           <p class="section-kicker">Focus</p>
-          <h2>Current Directions</h2>
+          <h2>Research Themes</h2>
         </div>
         <div class="focus-grid">
           <article class="focus-item">
             <span>01</span>
-            <h3>Robot Skill Learning</h3>
-            <p>Learning reusable behaviors for manipulation and household tasks.</p>
+            <h3>Topological Planning</h3>
+            <p>Representing large scenes as sparse graphs for long-horizon robotic reasoning.</p>
           </article>
           <article class="focus-item">
             <span>02</span>
-            <h3>Diffusion and Planning</h3>
-            <p>Using generative models to represent trajectories, actions, and goals.</p>
+            <h3>Offline RL</h3>
+            <p>Learning viewpoint and exploration policies from data without expensive online interaction.</p>
           </article>
           <article class="focus-item">
             <span>03</span>
-            <h3>Embodied Evaluation</h3>
-            <p>Building benchmarks and experiments that connect algorithms to environments.</p>
+            <h3>Active Reconstruction</h3>
+            <p>Coupling robot motion with high-fidelity mapping and scene reconstruction.</p>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="section projects-section">
+      <section id="first-author" class="section projects-section">
         <div class="section-heading">
-          <p class="section-kicker">Projects</p>
-          <h2>Selected Work</h2>
+          <p class="section-kicker">First-author Work</p>
+          <h2>Selected Papers</h2>
+        </div>
+        <div class="paper-list featured-list">
+          <article class="paper-card">
+            <div class="paper-copy">
+              <p class="paper-meta">IEEE Robotics and Automation Letters, 2026</p>
+              <h3>DST-Planner: Diffusion-Augmented Sequential Topological Planning for Robotic Exploration in Complex Environments</h3>
+              <p class="authors">Yiqing Yuan, Zhi Li, Jingsong Liang, Pengcheng Duan, Xupeng Zhang, Junfu Guo, Hui Cheng</p>
+              <p>
+                DST-Planner combines 3D skeleton graphs, sequential topological
+                decision-making, and diffusion-augmented offline RL to improve
+                autonomous exploration in complex environments.
+              </p>
+              <a class="text-link" href="https://scholar.google.com/citations?user=7MIXN0QAAAAJ&hl=en">View on Scholar</a>
+            </div>
+            <figure class="pipeline-figure">
+              <img src="assets/dst-planner-pipeline.png" alt="DST-Planner pipeline">
+              <figcaption>DST-Planner pipeline.</figcaption>
+            </figure>
+          </article>
+
+          <article class="paper-card">
+            <div class="paper-copy">
+              <p class="paper-meta">Manuscript, 2026</p>
+              <h3>Active Scene Reconstruction with Topological Reasoning and Semantic-Augmented Reinforcement Learning</h3>
+              <p class="authors">Yiqing Yuan*, Zhi Li*, Hao Ren, Kairao Zheng, Hui Cheng</p>
+              <p>
+                This work builds a graph-based active scene reconstruction
+                framework that integrates 3D skeleton topology, BEV-augmented
+                graph inference, and offline RL for robust viewpoint selection.
+              </p>
+              <a class="text-link" href="https://scholar.google.com/citations?user=7MIXN0QAAAAJ&hl=en">Google Scholar profile</a>
+            </div>
+            <figure class="pipeline-figure">
+              <img src="assets/trsa-pipeline.png" alt="Active scene reconstruction pipeline">
+              <figcaption>BEV-augmented topological graph learning pipeline.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="other-work" class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Other Work</p>
+          <h2>Collaborative Papers</h2>
         </div>
         <div class="project-list">
           <article class="project-row">
             <div>
-              <h3>DST-Planner</h3>
-              <p>Planning and decision-making experiments for embodied agents.</p>
+              <p class="paper-meta">IEEE Robotics and Automation Letters, 2025</p>
+              <h3>Learning to Explore Efficiently: Heterogeneous Topological Graphs and Lightweight Global Reasoning for Robotic Exploration</h3>
+              <p>Zhi Li, Kairao Zheng, Yiqing Yuan, Junlong Huang, Xupeng Zhang, Jianping Wu, Hui Cheng</p>
             </div>
-            <a href="https://github.com/Django-Shepherd" aria-label="Open GitHub profile">GitHub</a>
+            <a href="https://scholar.google.com/citations?user=7MIXN0QAAAAJ&hl=en" aria-label="Open Google Scholar profile">Scholar</a>
           </article>
           <article class="project-row">
             <div>
-              <h3>M2Diffuser</h3>
-              <p>Diffusion-model research code for robotics and trajectory generation.</p>
+              <p class="paper-meta">IEEE Robotics and Automation Letters, 2026</p>
+              <h3>GPTS-Nav: End-to-End Robot Navigation in Dynamic Environments with Graph-Privileged Teacher-Student Reinforcement Learning</h3>
+              <p>Kairao Zheng, Zhi Li, Yiqing Yuan, Hui Cheng</p>
             </div>
-            <a href="https://github.com/Django-Shepherd" aria-label="Open GitHub profile">GitHub</a>
-          </article>
-          <article class="project-row">
-            <div>
-              <h3>ManiSkill / MSHAB Experiments</h3>
-              <p>Simulation, imitation learning, and reinforcement learning workflows.</p>
-            </div>
-            <a href="https://github.com/Django-Shepherd" aria-label="Open GitHub profile">GitHub</a>
+            <a href="https://scholar.google.com/citations?user=7MIXN0QAAAAJ&hl=en" aria-label="Open Google Scholar profile">Scholar</a>
           </article>
         </div>
       </section>
@@ -105,12 +147,12 @@
       <section id="contact" class="section contact-section">
         <div>
           <p class="section-kicker">Contact</p>
-          <h2>Let us build something precise and useful.</h2>
+          <h2>Research links and contact.</h2>
         </div>
         <div class="contact-links">
           <a href="https://github.com/Django-Shepherd">GitHub</a>
-          <a href="mailto:your.email@example.com">Email</a>
-          <a href="#">Google Scholar</a>
+          <a href="https://scholar.google.com/citations?user=7MIXN0QAAAAJ&hl=en">Google Scholar</a>
+          <span>Verified email domain: mail2.sysu.edu.cn</span>
         </div>
       </section>
     </main>
