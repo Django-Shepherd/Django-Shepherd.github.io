@@ -433,6 +433,11 @@ html[data-view="home"] #_navbar .nav-btn {
   line-height: 1.5;
 }
 
+.pub-links {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 .pub-summary {
   color: var(--gray-text);
   font-size: .875rem;
