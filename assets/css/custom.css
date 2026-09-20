@@ -167,6 +167,7 @@ body,
 
 #_sidebar {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
   min-height: 0;
   height: auto;
@@ -283,6 +284,20 @@ body,
   height: 2.75rem;
   border: 0;
   color: var(--gray-text);
+}
+
+html[data-view="home"] #_navbar,
+html[data-view="home"] #_navbar > .content,
+html[data-view="home"] #_navbar .nav-btn-bar,
+html[data-view="home"] #_navbar .nav-btn {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+html[data-view="home"] #_navbar .nav-btn {
+  color: #fff;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .5));
 }
 
 #_navbar .nav-span {
