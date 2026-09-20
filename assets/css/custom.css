@@ -37,14 +37,14 @@ body::before {
   min-height: 0;
   height: auto;
   color: #fff;
-  background: #151a20;
+  background: var(--body-bg);
 }
 
 #_sidebar .sidebar-bg {
   grid-area: 1 / 1;
   position: relative;
   left: auto;
-  width: min(100%, 56rem, 90svh);
+  width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
   margin: 0 auto;
@@ -211,9 +211,9 @@ body::before {
   aspect-ratio: 3 / 2;
   padding: .5rem;
   overflow: hidden;
-  border: 1px solid #e1e5e9;
+  border: 1px solid var(--border-color);
   border-radius: .3rem;
-  background: #fff;
+  background: var(--body-bg);
 }
 
 .pipeline-image > img {
@@ -236,7 +236,7 @@ body::before {
   gap: .4rem;
   min-height: 0;
   padding-top: .4rem;
-  border-top: 1px solid #e1e5e9;
+  border-top: 1px solid var(--border-color);
 }
 
 .dst-figure-stack img {
