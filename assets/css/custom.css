@@ -15,6 +15,11 @@ body::before {
   display: none;
 }
 
+html[data-view="reading"] #_drawer,
+html[data-view="home"] .reading-layout {
+  display: none;
+}
+
 body,
 #_pushState {
   overflow: visible;
@@ -275,6 +280,12 @@ body,
 
 #_navbar .nav-span {
   display: none;
+}
+
+#_home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .homepage-content {
