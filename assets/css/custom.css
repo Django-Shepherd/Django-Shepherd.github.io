@@ -237,6 +237,7 @@ body::before {
 }
 
 #_main > footer.content {
+  position: static;
   width: auto;
   max-width: none;
   min-height: 0;
