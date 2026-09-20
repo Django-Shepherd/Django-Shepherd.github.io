@@ -1,6 +1,6 @@
 .sidebar-about .avatar {
   object-fit: cover;
-  object-position: 50% 100%;
+  object-position: center;
 }
 
 .sidebar-about > a.sidebar-title::after {
@@ -69,7 +69,7 @@ body,
   height: 7rem;
   margin: 0 0 1.25rem;
   object-fit: cover;
-  object-position: 50% 100%;
+  object-position: center;
 }
 
 .reading-profile a {
