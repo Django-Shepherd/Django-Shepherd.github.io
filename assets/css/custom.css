@@ -208,8 +208,6 @@ body::before {
 .pipeline-image {
   display: grid;
   width: 100%;
-  aspect-ratio: 3 / 2;
-  padding: .5rem;
   overflow: hidden;
   border: 1px solid var(--border-color);
   border-radius: .3rem;
@@ -219,30 +217,28 @@ body::before {
 .pipeline-image > img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-width: 0;
   min-height: 0;
   object-fit: contain;
 }
 
 .dst-feature .pipeline-image {
-  grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
-  gap: .5rem;
+  gap: .25rem;
 }
 
 .dst-figure-stack {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .4rem;
+  align-items: start;
+  gap: .25rem;
   min-height: 0;
-  padding-top: .4rem;
-  border-top: 1px solid var(--border-color);
 }
 
 .dst-figure-stack img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 0;
   object-fit: contain;
 }
