@@ -207,14 +207,15 @@ body::before {
 
 .pipeline-image {
   display: grid;
+  gap: 2px;
   width: 100%;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  border-radius: .3rem;
+  border-radius: 0;
   background: var(--body-bg);
 }
 
-.pipeline-image > img {
+.pipeline-image img {
   display: block;
   width: 100%;
   height: auto;
@@ -223,24 +224,19 @@ body::before {
   object-fit: contain;
 }
 
-.dst-feature .pipeline-image {
-  gap: .25rem;
-}
-
-.dst-figure-stack {
+.figure-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Source aspect ratios keep adjacent panels the same height without cropping. */
+  grid-template-columns: var(--figure-columns);
   align-items: start;
-  gap: .25rem;
+  min-width: 0;
   min-height: 0;
 }
 
-.dst-figure-stack img {
-  display: block;
-  width: 100%;
-  height: auto;
+.figure-column {
+  display: grid;
+  min-width: 0;
   min-height: 0;
-  object-fit: contain;
 }
 
 .publication .pub-info {
