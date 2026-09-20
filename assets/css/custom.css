@@ -453,7 +453,7 @@ body,
 @media screen and (min-width: 64em) {
   .reading-layout {
     display: grid;
-    grid-template-columns: clamp(21.6rem, 30vw, 28.8rem) minmax(0, 1fr);
+    grid-template-columns: 24% minmax(0, 1fr);
     align-items: start;
   }
 
