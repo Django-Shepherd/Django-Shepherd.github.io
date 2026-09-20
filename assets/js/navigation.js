@@ -44,6 +44,13 @@
     });
   };
   window.addEventListener('scroll', () => {
+    if (document.documentElement.dataset.view === 'home' && !dialog.open && !viewFrame) {
+      const coverBottom = cover.getBoundingClientRect().bottom;
+      if (coverBottom <= 0) {
+        history.pushState(null, '', '#about');
+        showView(false, -coverBottom);
+      }
+    }
     if (!scheduled) {
       scheduled = true;
       window.requestAnimationFrame(updateSection);
@@ -51,9 +58,9 @@
   }, { passive: true });
   window.addEventListener('resize', updateSection);
 
-  // Only the active view participates in document scrolling.
+  // Keep the cover above the content until the reader scrolls past it.
   let viewFrame;
-  const showView = (focus = false) => {
+  const showView = (focus = false, scrollOffset = null) => {
     const target = document.getElementById(location.hash.slice(1));
     const reading = target && main.contains(target);
     document.documentElement.dataset.view = reading ? 'reading' : 'home';
@@ -62,7 +69,9 @@
     if (dialog.open) dialog.close();
     window.cancelAnimationFrame(viewFrame);
     viewFrame = window.requestAnimationFrame(() => {
-      if (reading) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      viewFrame = null;
+      if (reading && scrollOffset !== null) window.scrollTo({ top: scrollOffset, behavior: 'instant' });
+      else if (reading) target.scrollIntoView({ block: 'start', behavior: 'instant' });
       else window.scrollTo({ top: 0, behavior: 'instant' });
       if (focus) {
         const destination = reading ? target : cover;

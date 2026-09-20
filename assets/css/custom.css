@@ -15,8 +15,7 @@ body::before {
   display: none;
 }
 
-html[data-view="reading"] #_drawer,
-html[data-view="home"] .reading-layout {
+html[data-view="reading"] #_drawer {
   display: none;
 }
 
