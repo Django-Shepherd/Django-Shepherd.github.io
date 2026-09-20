@@ -19,6 +19,12 @@ html[data-view="reading"] #_drawer {
   display: none;
 }
 
+/* Keep the scroll area available without exposing the reading view. */
+html[data-view="home"] .reading-layout {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 body,
 #_pushState {
   overflow: visible;
@@ -175,15 +181,18 @@ body,
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
+  min-height: 100dvh;
   margin: 0 auto;
   background: none;
 }
 
 #_sidebar .cover-photo {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 #_sidebar .sidebar-bg::after {
