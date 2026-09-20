@@ -1,5 +1,6 @@
 .sidebar-about .avatar {
   object-fit: cover;
+  object-position: 50% 100%;
 }
 
 .sidebar-about > a.sidebar-title::after {
