@@ -44,11 +44,10 @@
     });
   };
   window.addEventListener('scroll', () => {
-    if (document.documentElement.dataset.view === 'home' && !dialog.open && !viewFrame) {
-      const coverBottom = cover.getBoundingClientRect().bottom;
-      if (coverBottom <= 0) {
+    if (document.documentElement.dataset.view === 'home' && !dialog.open && !switchingView) {
+      if (window.scrollY > 48) {
         history.pushState(null, '', '#about');
-        showView(false, -coverBottom);
+        showView();
       }
     }
     if (!scheduled) {
@@ -58,20 +57,26 @@
   }, { passive: true });
   window.addEventListener('resize', updateSection);
 
-  // Keep the cover above the content until the reader scrolls past it.
-  let viewFrame;
-  const showView = (focus = false, scrollOffset = null) => {
+  // Use the same transition for scrolling and navigation links.
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let switchingView = false;
+  let activeAnimation;
+  let navigationRevision = 0;
+  const showView = (focus = false) => {
+    const revision = ++navigationRevision;
     const target = document.getElementById(location.hash.slice(1));
     const reading = target && main.contains(target);
-    document.documentElement.dataset.view = reading ? 'reading' : 'home';
-    if (reading) home.removeAttribute('aria-current');
-    else home.setAttribute('aria-current', 'page');
+    const nextView = reading ? 'reading' : 'home';
+    const changed = document.documentElement.dataset.view !== nextView;
+    activeAnimation?.cancel();
     if (dialog.open) dialog.close();
-    window.cancelAnimationFrame(viewFrame);
-    viewFrame = window.requestAnimationFrame(() => {
-      viewFrame = null;
-      if (reading && scrollOffset !== null) window.scrollTo({ top: scrollOffset, behavior: 'instant' });
-      else if (reading) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+
+    const applyView = () => {
+      if (revision !== navigationRevision) return;
+      document.documentElement.dataset.view = nextView;
+      if (reading) home.removeAttribute('aria-current');
+      else home.setAttribute('aria-current', 'page');
+      if (reading) target.scrollIntoView({ block: 'start', behavior: 'instant' });
       else window.scrollTo({ top: 0, behavior: 'instant' });
       if (focus) {
         const destination = reading ? target : cover;
@@ -79,7 +84,44 @@
         destination.focus({ preventScroll: true });
       }
       updateSection();
-    });
+    };
+
+    if (!changed || reducedMotion.matches) {
+      switchingView = false;
+      applyView();
+      return;
+    }
+
+    switchingView = true;
+    const content = document.querySelector('.reading-layout');
+    const outgoing = reading ? cover : content;
+    const incoming = reading ? content : cover;
+    const animateView = async () => {
+      try {
+        activeAnimation = outgoing.animate(
+          [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-12px)' }],
+          { duration: 160, easing: 'ease-out', fill: 'forwards' }
+        );
+        await activeAnimation.finished;
+        if (revision !== navigationRevision) return;
+        applyView();
+        activeAnimation.cancel();
+        activeAnimation = incoming.animate(
+          [{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'translateY(0)' }],
+          { duration: 360, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' }
+        );
+        await activeAnimation.finished;
+      } catch {
+        // A newer navigation cancels the previous animation.
+      } finally {
+        if (revision === navigationRevision) {
+          activeAnimation?.cancel();
+          activeAnimation = null;
+          switchingView = false;
+        }
+      }
+    };
+    animateView();
   };
 
   document.addEventListener('click', event => {
